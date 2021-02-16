@@ -14,7 +14,7 @@ import dagger.Component
     - Gunakan @Binds apabila kita memiliki dependecy yang kita buat sendiri
     - Gunakan @Provides apabila kita menggunakan dependency 3rd Party
  */
-@Component
+@Component(modules = [CarModule::class, EngineModule::class])
 interface ApplicationComponent {
     /*
         Kita memberitahu Dagger bahwa MainActivity akan membutuhkan dependency yang ada di graph

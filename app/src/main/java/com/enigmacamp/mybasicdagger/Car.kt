@@ -4,8 +4,9 @@ import javax.inject.Inject
 
 /*
 Dependency constructor injection
+Alternatif lain selain menggunakan @Inject, bisa menggunakan @Module
  */
-class Car @Inject constructor(private val engine: Engine) {
+class Car(private val engine: IEngine) {
     fun start(): String {
         val info = engine.start()
         return info
