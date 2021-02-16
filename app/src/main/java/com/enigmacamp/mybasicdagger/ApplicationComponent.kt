@@ -9,8 +9,15 @@ import dagger.Component
 
     Ketika kita melakukan build project, Dagger akan men-generate class implementation dari interface
     @Component
+
+    Gunakan constructor injection sebisa mungkin ketika mendaftarkan Dagger Dependency Graph, alternatif lainnya
+    - Gunakan @Binds apabila kita memiliki dependecy yang kita buat sendiri
+    - Gunakan @Provides apabila kita menggunakan dependency 3rd Party
  */
 @Component
 interface ApplicationComponent {
-    fun car(): Car
+    /*
+        Kita memberitahu Dagger bahwa MainActivity akan membutuhkan dependency yang ada di graph
+     */
+    fun inject(activity: MainActivity)
 }
