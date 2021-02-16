@@ -12,7 +12,6 @@ import android.widget.TextView
   - Mempermudah testing
  */
 class MainActivity : AppCompatActivity() {
-    private lateinit var car: Car
     private lateinit var resultTextView: TextView
     private lateinit var engineButton: Button
     var isEngineStart = false
@@ -24,8 +23,8 @@ class MainActivity : AppCompatActivity() {
         resultTextView = findViewById(R.id.result_textView)
         engineButton = findViewById(R.id.engine_button)
         engineButton.setText("Engine Start")
-        car = Car()
-
+        val carContainer = (application as BaseApplication).appContainer
+        val car = carContainer.car
         engineButton.setOnClickListener {
             if (isEngineStart) {
                 resultTextView.setText(car.stop())

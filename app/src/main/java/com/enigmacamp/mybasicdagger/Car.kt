@@ -1,10 +1,9 @@
 package com.enigmacamp.mybasicdagger
 
-class Car {
-    /*
-      Tanpa dependency injection, class Car harus membuat class Engine
-     */
-    private val engine = Engine()
+/*
+Dependency constructor injection
+ */
+class Car(private val engine: Engine) {
     fun start(): String {
         val info = engine.start()
         return info
